@@ -74,7 +74,11 @@ Chuletario funciona en **Windows 10/11** con Python 3.10+:
 - Si ves caracteres raros, usa Windows Terminal o ejecuta antes: `chcp 65001` (UTF-8).
 
 ### Menú CLI
-
+<p>
+    <div align="center">
+    <img width="1565" height="772" alt="chuletario-cli" src="https://github.com/user-attachments/assets/e4afc1bb-42dc-43a4-85c3-6c161c5fa482" />
+    </div>
+</p>
 | Tecla | Acción |
 |-------|--------|
 | `1`–`11` | Ver comandos de una categoría |
@@ -91,6 +95,11 @@ Chuletario funciona en **Windows 10/11** con Python 3.10+:
 | `0` | Salir |
 
 ### Interfaz TUI
+<p>
+    <div align="center">
+    <img width="1558" height="968" alt="chuletario-tui" src="https://github.com/user-attachments/assets/23665cd7-0e2e-47a1-b9fe-c8f604bffa4b" />
+    </div>
+</p>
 
 Pulsa **T** en el menú principal. Podrás:
 
