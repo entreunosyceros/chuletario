@@ -5,7 +5,7 @@ FILTRO_TODAS = "__todas__"
 CREDITOS_URL = "https://github.com/entreunosyceros/chuletario"
 CREDITOS_AUTOR = "Creado por entreunosyceros"
 CREDITOS_DESCRIPCION = (
-    "Chuletario Pro es una chuleta interactiva de comandos Linux: consulta, busca, "
+    "Chuletario es una chuleta interactiva de comandos Linux: consulta, busca, "
     "añade y edita entradas organizadas por categorías (redes, sistema, usuarios, logs…). "
     "Exporta a Markdown o PDF y ofrece una interfaz en terminal (TUI) para gestionar "
     "tu colección de comandos de administración de sistemas."
@@ -74,5 +74,5 @@ ACCIONES_MENU = [
     ("R", "Recargar", "Volver a leer los módulos JSON desde disco"),
     ("T", "Interfaz TUI", "Abrir el modo visual en terminal"),
     ("C", "Créditos", "Información del proyecto y repositorio"),
-    ("0", "Salir", "Cerrar Chuletario Pro"),
+    ("0", "Salir", "Cerrar Chuletario"),
 ]

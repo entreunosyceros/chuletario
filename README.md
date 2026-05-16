@@ -1,4 +1,4 @@
-![Chuletario Pro](img/Chuletario.png)
+![Chuletario](img/Chuletario.png)
 
 # Chuletario
 
@@ -64,7 +64,7 @@ Los módulos JSON se resuelven por la ubicación del proyecto; no hace falta est
 
 ### Windows
 
-Chuletario Pro funciona en **Windows 10/11** con Python 3.10+:
+Chuletario funciona en **Windows 10/11** con Python 3.10+:
 
 - **`run_app.py` es la forma más cómoda**: crea `.venv` en `Scripts\python.exe`, instala dependencias y abre la app sin comandos extra.
 - Usa la **Terminal de Windows**, **Windows Terminal** o PowerShell (recomendado para la TUI y los colores).

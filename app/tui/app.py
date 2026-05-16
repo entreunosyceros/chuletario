@@ -87,7 +87,7 @@ class ChuletarioTUI(App):
 
     def compose(self) -> ComposeResult:
         yield Header()
-        yield Static("CHULETARIO PRO")
+        yield Static("CHULETARIO")
         with Horizontal(id="filtros"):
             yield Label("Categoría:")
             yield Select(opciones_select_categoria(categorias()), id="filtro-categoria", value=FILTRO_TODAS)

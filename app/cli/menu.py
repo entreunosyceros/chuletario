@@ -19,7 +19,7 @@ def mostrar_menu_principal() -> None:
 
     console.print(
         Panel.fit(
-            "[bold cyan]CHULETARIO PRO[/bold cyan]\n"
+            "[bold cyan]CHULETARIO[/bold cyan]\n"
             "[dim]Chuleta interactiva de comandos Linux[/dim]",
             border_style="cyan",
         )

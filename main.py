@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Punto de entrada de Chuletario Pro.
+Punto de entrada de Chuletario.
 
 Datos: modules/*.json
 Código: app/

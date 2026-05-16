@@ -182,7 +182,7 @@ def mostrar_creditos() -> None:
     console.print(
         Panel(
             CREDITOS_DESCRIPCION,
-            title="[bold cyan]Chuletario Pro[/bold cyan]",
+            title="[bold cyan]Chuletario[/bold cyan]",
             subtitle=f"[bold]{CREDITOS_AUTOR}[/bold]",
             border_style="cyan",
         )

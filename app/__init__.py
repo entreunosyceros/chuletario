@@ -1,5 +1,5 @@
 """
-Chuletario Pro — paquete de aplicación.
+Chuletario — paquete de aplicación.
 
 Los datos viven en ``modules/*.json`` (solo JSON).
 La lógica Python está organizada en submódulos de ``app/``.

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Launcher de Chuletario Pro.
+Launcher de Chuletario.
 
 - Crea el entorno virtual (.venv) si no existe
 - Instala o actualiza dependencias desde requirements.txt cuando haga falta
@@ -134,7 +134,7 @@ def preparar_entorno() -> Path:
 
 
 def iniciar_aplicacion(python: Path) -> None:
-    informar(f"Arrancando Chuletario Pro con el Python del entorno virtual...")
+    informar(f"Arrancando Chuletario con el Python del entorno virtual...")
     informar_ok(f"Ejecutando {MAIN_SCRIPT.name}")
     print(flush=True)
     subprocess.run([str(python), str(MAIN_SCRIPT)], cwd=PROJECT_ROOT, check=True)
@@ -144,7 +144,7 @@ def principal() -> None:
     os.chdir(PROJECT_ROOT)
 
     print("═" * 50, flush=True)
-    print("  Chuletario Pro — preparación del entorno", flush=True)
+    print("  Chuletario — preparación del entorno", flush=True)
     print("═" * 50, flush=True)
     print(flush=True)
 

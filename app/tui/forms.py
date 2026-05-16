@@ -433,7 +433,7 @@ class CreditsModal(ModalScreen[None]):
 
     def compose(self) -> ComposeResult:
         with Container(id="dialog-creditos"):
-            yield Label("[bold]Créditos — Chuletario Pro[/bold]")
+            yield Label("[bold]Créditos — Chuletario[/bold]")
             yield Static(f"[bold cyan]{CREDITOS_AUTOR}[/bold cyan]")
             yield Static(CREDITOS_DESCRIPCION)
             yield Static("Repositorio:")
