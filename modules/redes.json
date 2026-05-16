@@ -1,0 +1,384 @@
+{
+    "_meta": {
+        "modulo": "Redes",
+        "version": "0.4",
+        "descripcion": "Configuración, diagnóstico e información de red del equipo"
+    },
+    "Redes": [
+        {
+            "comando": "ip a",
+            "descripcion": "Interfaces, direcciones IPv4/IPv6 y estado (up/down)",
+            "ejemplo": "ip a"
+        },
+        {
+            "comando": "ip -br a",
+            "descripcion": "Resumen breve de interfaces e IPs (ideal para scripts)",
+            "ejemplo": "ip -br a"
+        },
+        {
+            "comando": "ip link",
+            "descripcion": "Listar interfaces; activar/desactivar (up/down)",
+            "ejemplo": "ip link show"
+        },
+        {
+            "comando": "ip link set",
+            "descripcion": "Subir o bajar una interfaz de red",
+            "ejemplo": "sudo ip link set eth0 up"
+        },
+        {
+            "comando": "ip -s link",
+            "descripcion": "Estadísticas de tráfico por interfaz (paquetes, errores)",
+            "ejemplo": "ip -s link show eth0"
+        },
+        {
+            "comando": "ip route",
+            "descripcion": "Tabla de enrutamiento (gateway por defecto, rutas estáticas)",
+            "ejemplo": "ip route show"
+        },
+        {
+            "comando": "ip route get",
+            "descripcion": "Ver por qué interfaz y gateway sale el tráfico a un destino",
+            "ejemplo": "ip route get 8.8.8.8"
+        },
+        {
+            "comando": "ip neigh",
+            "descripcion": "Tabla ARP/neighbor: IP ↔ MAC de dispositivos en la LAN",
+            "ejemplo": "ip neigh show"
+        },
+        {
+            "comando": "ip maddr",
+            "descripcion": "Direcciones multicast por interfaz",
+            "ejemplo": "ip maddr show"
+        },
+        {
+            "comando": "hostname",
+            "descripcion": "Nombre del equipo; -I muestra todas las IPs asignadas",
+            "ejemplo": "hostname -I"
+        },
+        {
+            "comando": "hostnamectl",
+            "descripcion": "Nombre de host, dominio y estado de red (systemd)",
+            "ejemplo": "hostnamectl status"
+        },
+        {
+            "comando": "ethtool",
+            "descripcion": "Velocidad, dúplex, driver y enlace de la tarjeta cableada",
+            "ejemplo": "ethtool eth0"
+        },
+        {
+            "comando": "ethtool -S",
+            "descripcion": "Contadores detallados de la NIC (errores, colisiones)",
+            "ejemplo": "ethtool -S eth0"
+        },
+        {
+            "comando": "lspci",
+            "descripcion": "Tarjetas de red PCI detectadas en el equipo",
+            "ejemplo": "lspci | grep -i ethernet"
+        },
+        {
+            "comando": "lsusb",
+            "descripcion": "Adaptadores USB WiFi/Ethernet conectados",
+            "ejemplo": "lsusb"
+        },
+        {
+            "comando": "lshw -C network",
+            "descripcion": "Inventario de hardware de red (modelo, driver, MAC)",
+            "ejemplo": "sudo lshw -short -C network"
+        },
+        {
+            "comando": "nmcli device",
+            "descripcion": "Estado de dispositivos gestionados por NetworkManager",
+            "ejemplo": "nmcli device status"
+        },
+        {
+            "comando": "nmcli connection",
+            "descripcion": "Perfiles de conexión guardados (cable, WiFi, VPN)",
+            "ejemplo": "nmcli connection show"
+        },
+        {
+            "comando": "nmcli device wifi",
+            "descripcion": "Escanear y listar redes WiFi cercanas",
+            "ejemplo": "nmcli device wifi list"
+        },
+        {
+            "comando": "nmcli general",
+            "descripcion": "Estado global de NetworkManager y conectividad",
+            "ejemplo": "nmcli general status"
+        },
+        {
+            "comando": "nmtui",
+            "descripcion": "Interfaz TUI para configurar red con NetworkManager",
+            "ejemplo": "sudo nmtui"
+        },
+        {
+            "comando": "networkctl",
+            "descripcion": "Estado de red con systemd-networkd (sin NetworkManager)",
+            "ejemplo": "networkctl status"
+        },
+        {
+            "comando": "netplan",
+            "descripcion": "Configuración de red en Ubuntu server/desktop (YAML)",
+            "ejemplo": "sudo netplan status"
+        },
+        {
+            "comando": "iw dev",
+            "descripcion": "Interfaces WiFi y parámetros (reemplazo moderno de iwconfig)",
+            "ejemplo": "iw dev"
+        },
+        {
+            "comando": "iw dev link",
+            "descripcion": "SSID, señal y velocidad del enlace WiFi actual",
+            "ejemplo": "iw dev wlan0 link"
+        },
+        {
+            "comando": "resolvectl",
+            "descripcion": "DNS y resolución gestionados por systemd-resolved",
+            "ejemplo": "resolvectl status"
+        },
+        {
+            "comando": "resolvectl query",
+            "descripcion": "Probar resolución DNS como la usa el sistema",
+            "ejemplo": "resolvectl query ejemplo.com"
+        },
+        {
+            "comando": "dig",
+            "descripcion": "Consultas DNS (A, AAAA, MX, TXT, etc.)",
+            "ejemplo": "dig +short ejemplo.com A"
+        },
+        {
+            "comando": "host",
+            "descripcion": "Resolver dominio a IP de forma rápida",
+            "ejemplo": "host ejemplo.com"
+        },
+        {
+            "comando": "nslookup",
+            "descripcion": "Consulta DNS interactiva o puntual",
+            "ejemplo": "nslookup ejemplo.com"
+        },
+        {
+            "comando": "getent hosts",
+            "descripcion": "Resolución vía NSS (/etc/hosts, DNS, LDAP)",
+            "ejemplo": "getent hosts ejemplo.com"
+        },
+        {
+            "comando": "ping",
+            "descripcion": "Comprobar conectividad ICMP (latencia, pérdida)",
+            "ejemplo": "ping -c 4 8.8.8.8"
+        },
+        {
+            "comando": "ping6",
+            "descripcion": "Ping sobre IPv6",
+            "ejemplo": "ping6 -c 4 2001:4860:4860::8888"
+        },
+        {
+            "comando": "tracepath",
+            "descripcion": "Ruta hasta un host sin instalar traceroute (usa UDP)",
+            "ejemplo": "tracepath ejemplo.com"
+        },
+        {
+            "comando": "traceroute",
+            "descripcion": "Saltos intermedios hasta un destino (ICMP/UDP)",
+            "ejemplo": "traceroute ejemplo.com"
+        },
+        {
+            "comando": "mtr",
+            "descripcion": "Traceroute continuo con estadísticas por salto",
+            "ejemplo": "mtr -rwzc 100 ejemplo.com"
+        },
+        {
+            "comando": "arping",
+            "descripcion": "Comprobar si un host responde en la capa 2 (ARP)",
+            "ejemplo": "arping -I eth0 192.168.1.1"
+        },
+        {
+            "comando": "ss",
+            "descripcion": "Puertos en escucha y conexiones TCP/UDP (reemplazo de netstat)",
+            "ejemplo": "ss -tulnp"
+        },
+        {
+            "comando": "ss -s",
+            "descripcion": "Resumen de sockets: TCP, UDP, estados",
+            "ejemplo": "ss -s"
+        },
+        {
+            "comando": "ss -tan",
+            "descripcion": "Todas las conexiones TCP con direcciones numéricas",
+            "ejemplo": "ss -tan"
+        },
+        {
+            "comando": "netstat",
+            "descripcion": "Puertos y conexiones (legacy; preferir ss)",
+            "ejemplo": "netstat -tulnp"
+        },
+        {
+            "comando": "nc",
+            "descripcion": "Probar si un puerto TCP/UDP está abierto (netcat)",
+            "ejemplo": "nc -zv ejemplo.com 443"
+        },
+        {
+            "comando": "nmap",
+            "descripcion": "Escanear puertos y servicios en hosts de la red",
+            "ejemplo": "nmap -sV 192.168.1.0/24"
+        },
+        {
+            "comando": "curl",
+            "descripcion": "Probar HTTP/HTTPS y ver cabeceras o IP pública",
+            "ejemplo": "curl -I https://ejemplo.com"
+        },
+        {
+            "comando": "curl ifconfig.me",
+            "descripcion": "IP pública del equipo (útil para comprobar si la VPN está activa)",
+            "ejemplo": "curl -4 ifconfig.me"
+        },
+        {
+            "comando": "wget",
+            "descripcion": "Descargar ficheros por HTTP/HTTPS/FTP",
+            "ejemplo": "wget https://ejemplo.com/archivo.iso"
+        },
+        {
+            "comando": "iperf3",
+            "descripcion": "Medir ancho de banda entre dos equipos (cliente/servidor)",
+            "ejemplo": "iperf3 -c 192.168.1.10"
+        },
+        {
+            "comando": "speedtest-cli",
+            "descripcion": "Test de velocidad a Internet (Ookla/speedtest.net)",
+            "ejemplo": "speedtest-cli --simple"
+        },
+        {
+            "comando": "tcpdump",
+            "descripcion": "Capturar tráfico en una interfaz (diagnóstico avanzado)",
+            "ejemplo": "sudo tcpdump -i eth0 port 443 -n"
+        },
+        {
+            "comando": "cat /proc/net/dev",
+            "descripcion": "Bytes y paquetes enviados/recibidos por interfaz",
+            "ejemplo": "cat /proc/net/dev"
+        },
+        {
+            "comando": "nstat",
+            "descripcion": "Estadísticas del stack de red del kernel",
+            "ejemplo": "nstat -az"
+        },
+        {
+            "comando": "lldpctl",
+            "descripcion": "Ver vecinos de red (switch, puerto) vía LLDP",
+            "ejemplo": "sudo lldpctl"
+        },
+        {
+            "comando": "whois",
+            "descripcion": "Información de registro de un dominio o rango IP",
+            "ejemplo": "whois ejemplo.com"
+        },
+        {
+            "comando": "ufw",
+            "descripcion": "Firewall sencillo en Ubuntu/Debian",
+            "ejemplo": "sudo ufw status verbose"
+        },
+        {
+            "comando": "iptables -L",
+            "descripcion": "Listar reglas netfilter (iptables clásico)",
+            "ejemplo": "sudo iptables -L -n -v"
+        },
+        {
+            "comando": "nft list ruleset",
+            "descripcion": "Reglas del firewall moderno nftables",
+            "ejemplo": "sudo nft list ruleset"
+        },
+        {
+            "comando": "firewall-cmd",
+            "descripcion": "Firewall en RHEL/Fedora/CentOS (firewalld)",
+            "ejemplo": "sudo firewall-cmd --list-all"
+        },
+        {
+            "comando": "wg show",
+            "descripcion": "Estado de interfaces WireGuard (peers, claves, tráfico)",
+            "ejemplo": "sudo wg show"
+        },
+        {
+            "comando": "wg-quick",
+            "descripcion": "Levantar o bajar túnel WireGuard desde /etc/wireguard/*.conf",
+            "ejemplo": "sudo wg-quick up wg0"
+        },
+        {
+            "comando": "wg genkey",
+            "descripcion": "Generar par de claves WireGuard (privada y pública)",
+            "ejemplo": "wg genkey | tee privatekey | wg pubkey > publickey"
+        },
+        {
+            "comando": "systemctl wg-quick@",
+            "descripcion": "Gestionar WireGuard como servicio systemd al arranque",
+            "ejemplo": "sudo systemctl enable --now wg-quick@wg0"
+        },
+        {
+            "comando": "openvpn",
+            "descripcion": "Conectar cliente OpenVPN con archivo .ovpn",
+            "ejemplo": "sudo openvpn --config cliente.ovpn"
+        },
+        {
+            "comando": "systemctl openvpn",
+            "descripcion": "Cliente/servidor OpenVPN gestionado por systemd",
+            "ejemplo": "sudo systemctl status openvpn-client@empresa"
+        },
+        {
+            "comando": "nmcli connection up",
+            "descripcion": "Activar perfil VPN guardado en NetworkManager",
+            "ejemplo": "nmcli connection up id 'VPN Empresa'"
+        },
+        {
+            "comando": "nmcli connection show",
+            "descripcion": "Listar conexiones VPN y ver UUID, tipo y estado",
+            "ejemplo": "nmcli -f NAME,TYPE,DEVICE connection show"
+        },
+        {
+            "comando": "ipsec status",
+            "descripcion": "Estado de túneles IPsec (strongSwan/libreswan)",
+            "ejemplo": "sudo ipsec status"
+        },
+        {
+            "comando": "swanctl",
+            "descripcion": "Gestionar IPsec con strongSwan (vici, moderno)",
+            "ejemplo": "sudo swanctl --list-sas"
+        },
+        {
+            "comando": "openconnect",
+            "descripcion": "Cliente VPN SSL (Cisco AnyConnect, GlobalProtect, etc.)",
+            "ejemplo": "sudo openconnect vpn.empresa.com"
+        },
+        {
+            "comando": "tailscale status",
+            "descripcion": "Estado de la malla VPN Tailscale (peers, IPs, relays)",
+            "ejemplo": "tailscale status"
+        },
+        {
+            "comando": "tailscale up",
+            "descripcion": "Conectar el equipo a la red Tailscale",
+            "ejemplo": "sudo tailscale up"
+        },
+        {
+            "comando": "ip route (VPN)",
+            "descripcion": "Rutas del túnel VPN (split tunnel vs full tunnel)",
+            "ejemplo": "ip route show table all | grep -E 'wg|tun'"
+        },
+        {
+            "comando": "ssh",
+            "descripcion": "Acceso remoto seguro al servidor",
+            "ejemplo": "ssh usuario@192.168.1.10"
+        },
+        {
+            "comando": "ssh-copy-id",
+            "descripcion": "Copiar clave pública al servidor para login sin contraseña",
+            "ejemplo": "ssh-copy-id usuario@192.168.1.10"
+        },
+        {
+            "comando": "scp",
+            "descripcion": "Copiar archivos por SSH",
+            "ejemplo": "scp archivo.txt usuario@servidor:/home/usuario/"
+        },
+        {
+            "comando": "rsync over SSH",
+            "descripcion": "Sincronizar carpetas de forma segura por red",
+            "ejemplo": "rsync -avz -e ssh ./datos/ usuario@servidor:/backup/"
+        }
+    ]
+}

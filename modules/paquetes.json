@@ -1,0 +1,369 @@
+{
+    "_meta": {
+        "modulo": "Paquetes",
+        "version": "0.3",
+        "descripcion": "Instalación y mantenimiento de software"
+    },
+    "Paquetes": [
+        {
+            "comando": "apt update",
+            "descripcion": "Actualizar índice de paquetes desde repositorios",
+            "ejemplo": "sudo apt update"
+        },
+        {
+            "comando": "apt upgrade",
+            "descripcion": "Actualizar paquetes instalados (conserva paquetes retenidos)",
+            "ejemplo": "sudo apt upgrade -y"
+        },
+        {
+            "comando": "apt full-upgrade",
+            "descripcion": "Actualización completa; puede instalar o quitar dependencias",
+            "ejemplo": "sudo apt full-upgrade -y"
+        },
+        {
+            "comando": "apt install",
+            "descripcion": "Instalar paquetes y dependencias",
+            "ejemplo": "sudo apt install nginx"
+        },
+        {
+            "comando": "apt install -V",
+            "descripcion": "Instalar mostrando versiones de paquetes nuevos",
+            "ejemplo": "sudo apt install -V htop curl"
+        },
+        {
+            "comando": "apt reinstall",
+            "descripcion": "Reinstalar paquete sin tocar configuración",
+            "ejemplo": "sudo apt reinstall openssh-server"
+        },
+        {
+            "comando": "apt remove",
+            "descripcion": "Eliminar paquete (deja archivos de configuración)",
+            "ejemplo": "sudo apt remove nginx"
+        },
+        {
+            "comando": "apt purge",
+            "descripcion": "Eliminar paquete y sus archivos de configuración",
+            "ejemplo": "sudo apt purge nginx"
+        },
+        {
+            "comando": "apt autoremove",
+            "descripcion": "Quitar dependencias que ya no se usan",
+            "ejemplo": "sudo apt autoremove -y"
+        },
+        {
+            "comando": "apt autoclean",
+            "descripcion": "Borrar .deb antiguos de la caché local",
+            "ejemplo": "sudo apt autoclean"
+        },
+        {
+            "comando": "apt clean",
+            "descripcion": "Vaciar por completo la caché de paquetes descargados",
+            "ejemplo": "sudo apt clean"
+        },
+        {
+            "comando": "apt search",
+            "descripcion": "Buscar paquetes en los repositorios",
+            "ejemplo": "apt search ^nginx$"
+        },
+        {
+            "comando": "apt show",
+            "descripcion": "Información detallada de un paquete",
+            "ejemplo": "apt show openssh-server"
+        },
+        {
+            "comando": "apt list",
+            "descripcion": "Listar paquetes instalados, actualizables o en repos",
+            "ejemplo": "apt list --upgradable"
+        },
+        {
+            "comando": "apt policy",
+            "descripcion": "Versiones disponibles y prioridad de repositorios",
+            "ejemplo": "apt policy nginx"
+        },
+        {
+            "comando": "apt download",
+            "descripcion": "Descargar .deb sin instalar",
+            "ejemplo": "apt download nginx"
+        },
+        {
+            "comando": "apt-mark hold",
+            "descripcion": "Bloquear actualización de un paquete",
+            "ejemplo": "sudo apt-mark hold nginx"
+        },
+        {
+            "comando": "apt-mark unhold",
+            "descripcion": "Permitir de nuevo actualizar un paquete retenido",
+            "ejemplo": "sudo apt-mark unhold nginx"
+        },
+        {
+            "comando": "apt-mark showmanual",
+            "descripcion": "Paquetes instalados explícitamente (no solo dependencia)",
+            "ejemplo": "apt-mark showmanual | head"
+        },
+        {
+            "comando": "apt-cache depends",
+            "descripcion": "Dependencias de un paquete",
+            "ejemplo": "apt-cache depends nginx"
+        },
+        {
+            "comando": "apt-cache rdepends",
+            "descripcion": "Paquetes que dependen de este (inversas)",
+            "ejemplo": "apt-cache rdepends libc6"
+        },
+        {
+            "comando": "apt-file search",
+            "descripcion": "Buscar qué paquete instala un archivo (apt install apt-file)",
+            "ejemplo": "apt-file search bin/nginx"
+        },
+        {
+            "comando": "add-apt-repository",
+            "descripcion": "Añadir PPA o repositorio externo (Debian/Ubuntu)",
+            "ejemplo": "sudo add-apt-repository ppa:deadsnakes/ppa"
+        },
+        {
+            "comando": "dpkg -l",
+            "descripcion": "Listar paquetes instalados en el sistema",
+            "ejemplo": "dpkg -l | grep nginx"
+        },
+        {
+            "comando": "dpkg -s",
+            "descripcion": "Estado e información de un paquete instalado",
+            "ejemplo": "dpkg -s nginx"
+        },
+        {
+            "comando": "dpkg -L",
+            "descripcion": "Archivos instalados por un paquete",
+            "ejemplo": "dpkg -L nginx"
+        },
+        {
+            "comando": "dpkg -S",
+            "descripcion": "Qué paquete instaló un archivo concreto",
+            "ejemplo": "dpkg -S /usr/sbin/nginx"
+        },
+        {
+            "comando": "dpkg -i",
+            "descripcion": "Instalar paquete .deb manualmente",
+            "ejemplo": "sudo dpkg -i paquete.deb"
+        },
+        {
+            "comando": "dpkg --configure -a",
+            "descripcion": "Reparar instalaciones interrumpidas o dependencias rotas",
+            "ejemplo": "sudo dpkg --configure -a"
+        },
+        {
+            "comando": "dpkg-reconfigure",
+            "descripcion": "Volver a configurar paquete de forma interactiva",
+            "ejemplo": "sudo dpkg-reconfigure tzdata"
+        },
+        {
+            "comando": "dnf install",
+            "descripcion": "Instalar paquetes en Fedora/RHEL/AlmaLinux",
+            "ejemplo": "sudo dnf install nginx"
+        },
+        {
+            "comando": "dnf update",
+            "descripcion": "Actualizar todos los paquetes (familia Red Hat)",
+            "ejemplo": "sudo dnf update -y"
+        },
+        {
+            "comando": "dnf remove",
+            "descripcion": "Eliminar paquete en sistemas con dnf",
+            "ejemplo": "sudo dnf remove nginx"
+        },
+        {
+            "comando": "dnf search",
+            "descripcion": "Buscar paquetes en repositorios dnf",
+            "ejemplo": "dnf search nginx"
+        },
+        {
+            "comando": "dnf info",
+            "descripcion": "Información detallada de un paquete (dnf)",
+            "ejemplo": "dnf info nginx"
+        },
+        {
+            "comando": "rpm -qa",
+            "descripcion": "Listar todos los paquetes RPM instalados",
+            "ejemplo": "rpm -qa | grep nginx"
+        },
+        {
+            "comando": "rpm -qi",
+            "descripcion": "Información de un paquete RPM instalado",
+            "ejemplo": "rpm -qi nginx"
+        },
+        {
+            "comando": "rpm -ql",
+            "descripcion": "Archivos instalados por un paquete RPM",
+            "ejemplo": "rpm -ql nginx"
+        },
+        {
+            "comando": "rpm -qf",
+            "descripcion": "Qué paquete RPM instaló un archivo",
+            "ejemplo": "rpm -qf /usr/sbin/nginx"
+        },
+        {
+            "comando": "snap list",
+            "descripcion": "Listar snaps instalados (Ubuntu y derivados)",
+            "ejemplo": "snap list"
+        },
+        {
+            "comando": "snap install",
+            "descripcion": "Instalar aplicación empaquetada como snap",
+            "ejemplo": "sudo snap install code --classic"
+        },
+        {
+            "comando": "snap remove",
+            "descripcion": "Desinstalar un snap",
+            "ejemplo": "sudo snap remove code"
+        },
+        {
+            "comando": "snap refresh",
+            "descripcion": "Actualizar snaps instalados",
+            "ejemplo": "sudo snap refresh"
+        },
+        {
+            "comando": "flatpak install",
+            "descripcion": "Instalar aplicación Flatpak desde Flathub u origen",
+            "ejemplo": "flatpak install flathub org.gimp.GIMP"
+        },
+        {
+            "comando": "flatpak list",
+            "descripcion": "Listar aplicaciones Flatpak instaladas",
+            "ejemplo": "flatpak list"
+        },
+        {
+            "comando": "flatpak update",
+            "descripcion": "Actualizar todas las aplicaciones Flatpak",
+            "ejemplo": "flatpak update -y"
+        },
+        {
+            "comando": "pip install",
+            "descripcion": "Instalar paquetes Python (entorno de usuario o venv)",
+            "ejemplo": "pip install requests"
+        },
+        {
+            "comando": "pip list",
+            "descripcion": "Listar paquetes Python instalados en el entorno",
+            "ejemplo": "pip list --outdated"
+        },
+        {
+            "comando": "npm install",
+            "descripcion": "Instalar dependencias del proyecto (package.json)",
+            "ejemplo": "npm install"
+        },
+        {
+            "comando": "npm install -g",
+            "descripcion": "Instalar paquete Node.js de forma global",
+            "ejemplo": "npm install -g typescript"
+        },
+        {
+            "comando": "npm uninstall",
+            "descripcion": "Quitar paquete del proyecto o global",
+            "ejemplo": "npm uninstall lodash"
+        },
+        {
+            "comando": "npm update",
+            "descripcion": "Actualizar paquetes según package.json",
+            "ejemplo": "npm update"
+        },
+        {
+            "comando": "npm list",
+            "descripcion": "Listar paquetes instalados y versiones",
+            "ejemplo": "npm list --depth=0"
+        },
+        {
+            "comando": "npm ci",
+            "descripcion": "Instalación limpia desde package-lock.json (CI/producción)",
+            "ejemplo": "npm ci"
+        },
+        {
+            "comando": "npx",
+            "descripcion": "Ejecutar binario de paquete sin instalarlo globalmente",
+            "ejemplo": "npx create-react-app mi-app"
+        },
+        {
+            "comando": "cargo install",
+            "descripcion": "Instalar binario Rust desde crates.io",
+            "ejemplo": "cargo install ripgrep"
+        },
+        {
+            "comando": "cargo search",
+            "descripcion": "Buscar crates en el registro de Rust",
+            "ejemplo": "cargo search serde"
+        },
+        {
+            "comando": "cargo update",
+            "descripcion": "Actualizar dependencias en Cargo.lock",
+            "ejemplo": "cargo update"
+        },
+        {
+            "comando": "cargo uninstall",
+            "descripcion": "Desinstalar binario instalado con cargo install",
+            "ejemplo": "cargo uninstall ripgrep"
+        },
+        {
+            "comando": "rustup",
+            "descripcion": "Gestionar toolchains y versiones de Rust",
+            "ejemplo": "rustup update stable"
+        },
+        {
+            "comando": "java -version",
+            "descripcion": "Comprobar versión del JDK/JRE instalado",
+            "ejemplo": "java -version"
+        },
+        {
+            "comando": "apt install openjdk",
+            "descripcion": "Instalar JDK OpenJDK desde repositorios (Debian/Ubuntu)",
+            "ejemplo": "sudo apt install openjdk-21-jdk"
+        },
+        {
+            "comando": "update-alternatives",
+            "descripcion": "Elegir versión por defecto de java/javac entre varias instaladas",
+            "ejemplo": "sudo update-alternatives --config java"
+        },
+        {
+            "comando": "javac",
+            "descripcion": "Compilar código fuente Java (.java → .class)",
+            "ejemplo": "javac Main.java"
+        },
+        {
+            "comando": "mvn install",
+            "descripcion": "Compilar e instalar proyecto Maven en repositorio local",
+            "ejemplo": "mvn clean install"
+        },
+        {
+            "comando": "mvn dependency:tree",
+            "descripcion": "Ver árbol de dependencias Maven del proyecto",
+            "ejemplo": "mvn dependency:tree"
+        },
+        {
+            "comando": "gradle build",
+            "descripcion": "Compilar proyecto Java/Kotlin con Gradle",
+            "ejemplo": "./gradlew build"
+        },
+        {
+            "comando": "sdk install java",
+            "descripcion": "Instalar versión de Java con SDKMAN (gestor por usuario)",
+            "ejemplo": "sdk install java 21.0.2-tem"
+        },
+        {
+            "comando": "AppImage",
+            "descripcion": "Ejecutar aplicación portable (.AppImage); dar permiso de ejecución antes",
+            "ejemplo": "chmod +x app.AppImage && ./app.AppImage"
+        },
+        {
+            "comando": "AppImage --appimage-extract",
+            "descripcion": "Extraer contenido de un AppImage sin ejecutarlo",
+            "ejemplo": "./app.AppImage --appimage-extract"
+        },
+        {
+            "comando": "appimaged",
+            "descripcion": "Integrar AppImages en el menú (AppImageLauncher / appimaged)",
+            "ejemplo": "systemctl --user status appimaged"
+        },
+        {
+            "comando": "needrestart",
+            "descripcion": "Detectar servicios que requieren reinicio tras actualizar (Debian/Ubuntu)",
+            "ejemplo": "sudo needrestart -r l"
+        }
+    ]
+}

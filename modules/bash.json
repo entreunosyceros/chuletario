@@ -1,0 +1,207 @@
+{
+    "_meta": {
+        "modulo": "Bash",
+        "version": "1.0",
+        "descripcion": "Comandos y construcciones de Bash para scripts de automatización"
+    },
+    "Bash": [
+        {
+            "comando": "#!/bin/bash",
+            "descripcion": "Shebang: indica que el script debe ejecutarse con Bash",
+            "ejemplo": "#!/bin/bash\n# primera línea del script.sh",
+            "notas": "Dar permisos de ejecución: chmod +x script.sh"
+        },
+        {
+            "comando": "set -euo pipefail",
+            "descripcion": "Modo estricto recomendado en scripts: falla ante error, variables no definidas y fallos en tuberías",
+            "ejemplo": "#!/bin/bash\nset -euo pipefail",
+            "notas": "Ponlo al inicio del script, tras el shebang"
+        },
+        {
+            "comando": "set -x",
+            "descripcion": "Modo depuración: imprime cada comando antes de ejecutarlo",
+            "ejemplo": "set -x\ncomando_sospechoso"
+        },
+        {
+            "comando": "VAR=valor",
+            "descripcion": "Asignar variable (sin espacios alrededor del =)",
+            "ejemplo": "NOMBRE=\"servidor01\"\nPUERTO=8080"
+        },
+        {
+            "comando": "$VAR / ${VAR}",
+            "descripcion": "Expandir el valor de una variable",
+            "ejemplo": "echo \"Host: ${NOMBRE}\"\necho \"Puerto: $PUERTO\""
+        },
+        {
+            "comando": "export VAR",
+            "descripcion": "Exportar variable al entorno (visible para procesos hijos)",
+            "ejemplo": "export PATH=\"/opt/app/bin:$PATH\"\nexport DB_HOST=\"localhost\""
+        },
+        {
+            "comando": "$1, $2, $@, $#",
+            "descripcion": "Argumentos del script: posicionales, todos los args y cantidad",
+            "ejemplo": "# script.sh archivo1 archivo2\n# $0=nombre script, $1=archivo1, $#=2\necho \"Uso: $0 <fichero>\"\necho \"Primer arg: $1\"\nfor arg in \"$@\"; do echo \"$arg\"; done"
+        },
+        {
+            "comando": "$?",
+            "descripcion": "Código de salida del último comando (0 = éxito)",
+            "ejemplo": "comando\nif [ $? -ne 0 ]; then\n  echo \"Falló\" >&2\n  exit 1\nfi"
+        },
+        {
+            "comando": "exit N",
+            "descripcion": "Terminar el script con código de salida (0 éxito, distinto de 0 error)",
+            "ejemplo": "if [ ! -f \"$1\" ]; then\n  echo \"No existe el archivo\" >&2\n  exit 1\nfi\nexit 0"
+        },
+        {
+            "comando": "if [ condición ]; then",
+            "descripcion": "Condicional con test clásico (espacios obligatorios dentro de [ ])",
+            "ejemplo": "if [ -f \"/etc/hosts\" ]; then\n  echo \"Existe\"\nelse\n  echo \"No existe\"\nfi"
+        },
+        {
+            "comando": "[[ condición ]]",
+            "descripcion": "Test avanzado de Bash: cadenas, regex y && || dentro del mismo bloque",
+            "ejemplo": "if [[ -f \"$ARCHIVO\" && -r \"$ARCHIVO\" ]]; then\n  echo \"Legible\"\nfi\nif [[ \"$ENV\" == \"prod\" ]]; then echo prod; fi"
+        },
+        {
+            "comando": "test / [ ]",
+            "descripcion": "Comprobar ficheros (-f), directorios (-d), permisos (-r -w -x), cadenas (-z -n)",
+            "ejemplo": "[ -d \"/var/log\" ] && echo \"Es directorio\"\n[ -z \"$VAR\" ] && echo \"Vacía\"\n[ \"$A\" = \"$B\" ]"
+        },
+        {
+            "comando": "case",
+            "descripcion": "Ramificar según un valor (útil para argumentos y menús en scripts)",
+            "ejemplo": "case \"$1\" in\n  start) systemctl start app ;;\n  stop)  systemctl stop app ;;\n  *)     echo \"Uso: $0 {start|stop}\" ; exit 1 ;;\nesac"
+        },
+        {
+            "comando": "for",
+            "descripcion": "Bucle sobre lista o resultado de comando",
+            "ejemplo": "for f in /var/log/*.log; do\n  echo \"Procesando $f\"\n  gzip \"$f\"\ndone\nfor i in {1..5}; do echo \"$i\"; done"
+        },
+        {
+            "comando": "while",
+            "descripcion": "Repetir mientras se cumpla una condición",
+            "ejemplo": "while read -r linea; do\n  echo \"$linea\"\ndone < archivo.txt\nCONTADOR=0\nwhile [ \"$CONTADOR\" -lt 10 ]; do\n  ((CONTADOR++))\ndone"
+        },
+        {
+            "comando": "until",
+            "descripcion": "Repetir hasta que se cumpla la condición (inverso de while)",
+            "ejemplo": "until ping -c1 -W1 \"$HOST\" &>/dev/null; do\n  echo \"Esperando a $HOST...\"\n  sleep 2\ndone"
+        },
+        {
+            "comando": "function nombre()",
+            "descripcion": "Definir función reutilizable dentro del script",
+            "ejemplo": "log() {\n  echo \"[$(date '+%F %T')] $*\"\n}\nlog \"Inicio del backup\""
+        },
+        {
+            "comando": "local",
+            "descripcion": "Variable local dentro de una función (no contamina el ámbito global)",
+            "ejemplo": "procesar() {\n  local archivo=\"$1\"\n  echo \"$archivo\"\n}"
+        },
+        {
+            "comando": "$(comando)",
+            "descripcion": "Sustitución de comando: captura la salida en una variable",
+            "ejemplo": "FECHA=$(date '+%Y%m%d')\nUSUARIOS=$(who | wc -l)\necho \"Hoy: $FECHA, conectados: $USUARIOS\""
+        },
+        {
+            "comando": "$(( expresión ))",
+            "descripcion": "Aritmética entera en Bash",
+            "ejemplo": "A=10\nB=3\necho $((A + B))\necho $((A % B))\n(( CONTADOR++ ))"
+        },
+        {
+            "comando": "${var#patrón} / ${var##patrón}",
+            "descripcion": "Quitar prefijo de cadena (útil con rutas y nombres de archivo)",
+            "ejemplo": "RUTA=\"/var/www/html/index.php\"\nDIR=\"${RUTA%/*}\"\nBASE=\"${RUTA##*/}\"\necho \"$DIR\" \"$BASE\""
+        },
+        {
+            "comando": "${var:-default}",
+            "descripcion": "Valor por defecto si la variable está vacía o no definida",
+            "ejemplo": "PUERTO=\"${PUERTO:-8080}\"\nLOG=\"${LOG_DIR:-/var/log}/app.log\""
+        },
+        {
+            "comando": "arrays",
+            "descripcion": "Arrays indexados en Bash",
+            "ejemplo": "SERVIDORES=(web1 web2 web3)\necho \"${SERVIDORES[0]}\"\necho \"Total: ${#SERVIDORES[@]}\"\nfor s in \"${SERVIDORES[@]}\"; do echo \"$s\"; done"
+        },
+        {
+            "comando": "read",
+            "descripcion": "Leer línea por línea (archivos, tuberías o entrada del usuario)",
+            "ejemplo": "read -r -p \"Nombre del backup: \" NOMBRE\necho \"Backup: $NOMBRE\"\nwhile IFS= read -r linea; do\n  echo \"$linea\"\ndone < lista.txt"
+        },
+        {
+            "comando": "here document (<<)",
+            "descripcion": "Pasar varias líneas como entrada a un comando (heredoc)",
+            "ejemplo": "cat << 'EOF' > /tmp/config.conf\nusuario=admin\npuerto=443\nEOF\ngrep -v '^#' <<EOF\nlinea1\nlinea2\nEOF"
+        },
+        {
+            "comando": "pipefail y tuberías",
+            "descripcion": "Encadenar comandos; con pipefail un fallo en cualquier eslabón falla el script",
+            "ejemplo": "set -o pipefail\ncat access.log | grep \" 500 \" | wc -l\ncomando1 | comando2 | comando3"
+        },
+        {
+            "comando": "redirecciones",
+            "descripcion": "Redirigir salida, errores y append en scripts",
+            "ejemplo": "comando > salida.txt 2> errores.log\ncomando >> /var/log/app.log 2>&1\ncomando &> todo.log"
+        },
+        {
+            "comando": "trap",
+            "descripcion": "Ejecutar acción al recibir señal o al salir (limpieza, rollback)",
+            "ejemplo": "trap 'rm -f \"$TMP\"' EXIT\ntrap 'echo \"Interrumpido\"; exit 130' INT TERM\nTMP=$(mktemp)"
+        },
+        {
+            "comando": "mktemp",
+            "descripcion": "Crear archivo o directorio temporal seguro en scripts",
+            "ejemplo": "TMPFILE=$(mktemp)\ntmpdir=$(mktemp -d)\necho \"datos\" > \"$TMPFILE\"\ntrap 'rm -rf \"$tmpdir\"' EXIT"
+        },
+        {
+            "comando": "source / .",
+            "descripcion": "Cargar otro script en el shell actual (variables y funciones compartidas)",
+            "ejemplo": "# Cargar configuración\nsource /etc/default/miapp\n. ./lib/funciones.sh"
+        },
+        {
+            "comando": "getopts",
+            "descripcion": "Parsear opciones -a -f valor en scripts (estilo comandos Unix)",
+            "ejemplo": "while getopts \":hf:o:\" opt; do\n  case $opt in\n    h) echo \"Ayuda\"; exit 0 ;;\n    f) ARCHIVO=\"$OPTARG\" ;;\n    o) SALIDA=\"$OPTARG\" ;;\n    *) exit 1 ;;\n  esac\ndone"
+        },
+        {
+            "comando": "& y wait",
+            "descripcion": "Ejecutar tareas en segundo plano y esperar a que terminen",
+            "ejemplo": "proceso_largo &\nPID=$!\notro_proceso &\nwait \"$PID\"\necho \"El primero terminó\""
+        },
+        {
+            "comando": "[[ -n \"$VAR\" ]]",
+            "descripcion": "Comprobar que una variable obligatoria viene definida antes de usarla",
+            "ejemplo": ": \"${DB_USER:?Falta DB_USER}\"\n: \"${DB_PASS:?Falta DB_PASS}\"",
+            "notas": ": es un no-op; ? en ${VAR:?msg} aborta con mensaje si VAR está vacía"
+        },
+        {
+            "comando": "printf",
+            "descripcion": "Salida formateada (más predecible que echo en scripts)",
+            "ejemplo": "printf '%s tiene %d líneas\\n' \"$f\" \"$N\"\nprintf '%02d:%02d\\n' \"$H\" \"$M\""
+        },
+        {
+            "comando": "logger",
+            "descripcion": "Enviar mensajes al syslog desde un script",
+            "ejemplo": "logger -t mi-backup \"Backup completado\"\nlogger -p user.err \"Error en paso 3\""
+        },
+        {
+            "comando": "timeout",
+            "descripcion": "Limitar tiempo máximo de ejecución de un comando en automatización",
+            "ejemplo": "timeout 30s curl -fsS https://ejemplo.com/health || exit 1"
+        },
+        {
+            "comando": "command -v",
+            "descripcion": "Comprobar si un comando existe antes de usarlo (portable en scripts)",
+            "ejemplo": "if ! command -v jq &>/dev/null; then\n  echo \"Instala jq\" >&2\n  exit 1\nfi"
+        },
+        {
+            "comando": "tee",
+            "descripcion": "Mostrar salida y guardarla en archivo a la vez (útil en logs de scripts)",
+            "ejemplo": "./backup.sh 2>&1 | tee -a /var/log/backup-$(date +%F).log"
+        },
+        {
+            "comando": "exec",
+            "descripcion": "Reemplazar el shell por otro comando o redirigir fds del script",
+            "ejemplo": "exec > >(tee -a /var/log/script.log)\nexec 2>&1\nexec \"$@\""
+        }
+    ]
+}

@@ -1,0 +1,64 @@
+{
+    "_meta": {
+        "modulo": "Permisos",
+        "version": "0.2",
+        "descripcion": "Permisos, propiedad y ACL"
+    },
+    "Permisos": [
+        {
+            "comando": "ls -l",
+            "descripcion": "Ver permisos, propietario y grupo de archivos",
+            "ejemplo": "ls -la /etc/passwd"
+        },
+        {
+            "comando": "chmod",
+            "descripcion": "Cambiar permisos (octal o simbólico)",
+            "ejemplo": "chmod 755 script.sh"
+        },
+        {
+            "comando": "chown",
+            "descripcion": "Cambiar propietario y grupo",
+            "ejemplo": "sudo chown juan:desarrollo proyecto/"
+        },
+        {
+            "comando": "chgrp",
+            "descripcion": "Cambiar solo el grupo de un archivo",
+            "ejemplo": "sudo chgrp www-data /var/www/html"
+        },
+        {
+            "comando": "umask",
+            "descripcion": "Máscara de permisos por defecto al crear archivos",
+            "ejemplo": "umask 022"
+        },
+        {
+            "comando": "chmod +s",
+            "descripcion": "Activar SUID/SGID en un ejecutable",
+            "ejemplo": "sudo chmod u+s /usr/bin/passwd"
+        },
+        {
+            "comando": "chmod +t",
+            "descripcion": "Sticky bit en directorios compartidos (/tmp)",
+            "ejemplo": "sudo chmod +t /compartido"
+        },
+        {
+            "comando": "setfacl",
+            "descripcion": "Permisos ACL avanzados por usuario/grupo",
+            "ejemplo": "setfacl -m u:maria:rwx carpeta/"
+        },
+        {
+            "comando": "getfacl",
+            "descripcion": "Mostrar ACL de un archivo o directorio",
+            "ejemplo": "getfacl carpeta/"
+        },
+        {
+            "comando": "find -perm",
+            "descripcion": "Buscar archivos por permisos concretos",
+            "ejemplo": "find / -type f -perm 4000 2>/dev/null"
+        },
+        {
+            "comando": "stat",
+            "descripcion": "Metadatos: permisos, inodo, fechas",
+            "ejemplo": "stat /etc/shadow"
+        }
+    ]
+}

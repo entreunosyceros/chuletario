@@ -1,0 +1,264 @@
+{
+    "_meta": {
+        "modulo": "Sistema",
+        "version": "0.2",
+        "descripcion": "Configuración general del equipo"
+    },
+    "Sistema": [
+        {
+            "comando": "uname",
+            "descripcion": "Kernel y arquitectura del sistema",
+            "ejemplo": "uname -a"
+        },
+        {
+            "comando": "arch",
+            "descripcion": "Arquitectura del procesador (x86_64, aarch64…)",
+            "ejemplo": "arch"
+        },
+        {
+            "comando": "nproc",
+            "descripcion": "Número de CPUs/núcleos disponibles",
+            "ejemplo": "nproc"
+        },
+        {
+            "comando": "hostnamectl",
+            "descripcion": "Nombre del host, kernel y virtualización",
+            "ejemplo": "hostnamectl"
+        },
+        {
+            "comando": "hostnamectl set-hostname",
+            "descripcion": "Cambiar nombre del equipo de forma persistente",
+            "ejemplo": "sudo hostnamectl set-hostname servidor01"
+        },
+        {
+            "comando": "cat /etc/os-release",
+            "descripcion": "Distribución, versión y ID del sistema operativo",
+            "ejemplo": "cat /etc/os-release"
+        },
+        {
+            "comando": "lsb_release",
+            "descripcion": "Información de la distro (Ubuntu, Debian, etc.)",
+            "ejemplo": "lsb_release -a"
+        },
+        {
+            "comando": "uptime",
+            "descripcion": "Tiempo encendido, usuarios conectados y carga media",
+            "ejemplo": "uptime"
+        },
+        {
+            "comando": "who -b",
+            "descripcion": "Fecha y hora del último arranque del sistema",
+            "ejemplo": "who -b"
+        },
+        {
+            "comando": "timedatectl",
+            "descripcion": "Zona horaria y sincronización NTP",
+            "ejemplo": "timedatectl status"
+        },
+        {
+            "comando": "timedatectl set-timezone",
+            "descripcion": "Cambiar zona horaria del sistema",
+            "ejemplo": "sudo timedatectl set-timezone Europe/Madrid"
+        },
+        {
+            "comando": "date",
+            "descripcion": "Fecha y hora actuales; ajustar con -s (con cuidado)",
+            "ejemplo": "date '+%Y-%m-%d %H:%M:%S %Z'"
+        },
+        {
+            "comando": "hwclock",
+            "descripcion": "Reloj de hardware (BIOS/UEFI) vs reloj del sistema",
+            "ejemplo": "sudo hwclock --show"
+        },
+        {
+            "comando": "localectl",
+            "descripcion": "Idioma, locale y teclado del sistema",
+            "ejemplo": "localectl status"
+        },
+        {
+            "comando": "lscpu",
+            "descripcion": "Información del procesador",
+            "ejemplo": "lscpu"
+        },
+        {
+            "comando": "free",
+            "descripcion": "Memoria RAM y swap usada y libre",
+            "ejemplo": "free -h"
+        },
+        {
+            "comando": "lsmem",
+            "descripcion": "Mapa de memoria física instalada",
+            "ejemplo": "lsmem"
+        },
+        {
+            "comando": "dmidecode",
+            "descripcion": "Fabricante, modelo, BIOS y slots (requiere sudo)",
+            "ejemplo": "sudo dmidecode -t system"
+        },
+        {
+            "comando": "lsusb / lspci",
+            "descripcion": "Dispositivos USB y tarjetas PCI",
+            "ejemplo": "lsusb && lspci"
+        },
+        {
+            "comando": "lshw",
+            "descripcion": "Inventario completo de hardware del equipo",
+            "ejemplo": "sudo lshw -short"
+        },
+        {
+            "comando": "inxi",
+            "descripcion": "Resumen del sistema (CPU, GPU, disco, red; instalar inxi)",
+            "ejemplo": "inxi -Fxz"
+        },
+        {
+            "comando": "neofetch",
+            "descripcion": "Info visual de distro, kernel y recursos en terminal",
+            "ejemplo": "neofetch"
+        },
+        {
+            "comando": "dmesg",
+            "descripcion": "Mensajes del kernel al arranque y dispositivos",
+            "ejemplo": "dmesg | tail -30"
+        },
+        {
+            "comando": "journalctl -b",
+            "descripcion": "Logs del arranque actual (boot)",
+            "ejemplo": "journalctl -b -p err"
+        },
+        {
+            "comando": "lsmod",
+            "descripcion": "Módulos del kernel cargados",
+            "ejemplo": "lsmod"
+        },
+        {
+            "comando": "modinfo",
+            "descripcion": "Información de un módulo del kernel",
+            "ejemplo": "modinfo e1000e"
+        },
+        {
+            "comando": "sysctl",
+            "descripcion": "Parámetros del kernel en tiempo de ejecución",
+            "ejemplo": "sysctl -a | grep vm.swappiness"
+        },
+        {
+            "comando": "ulimit",
+            "descripcion": "Límites de recursos por shell (archivos abiertos, etc.)",
+            "ejemplo": "ulimit -a"
+        },
+        {
+            "comando": "shutdown",
+            "descripcion": "Apagar el sistema de forma controlada",
+            "ejemplo": "sudo shutdown -h now"
+        },
+        {
+            "comando": "shutdown -r",
+            "descripcion": "Reiniciar en X minutos (aviso a usuarios)",
+            "ejemplo": "sudo shutdown -r +5"
+        },
+        {
+            "comando": "reboot",
+            "descripcion": "Reiniciar el equipo",
+            "ejemplo": "sudo reboot"
+        },
+        {
+            "comando": "poweroff",
+            "descripcion": "Apagar (alternativa a shutdown)",
+            "ejemplo": "sudo poweroff"
+        },
+        {
+            "comando": "systemctl suspend",
+            "descripcion": "Suspender el equipo (ahorro de energía)",
+            "ejemplo": "systemctl suspend"
+        },
+        {
+            "comando": "systemctl poweroff",
+            "descripcion": "Apagar vía systemd (equivalente a poweroff)",
+            "ejemplo": "sudo systemctl poweroff"
+        },
+        {
+            "comando": "crontab",
+            "descripcion": "Tareas programadas del usuario",
+            "ejemplo": "crontab -l"
+        },
+        {
+            "comando": "crontab -e",
+            "descripcion": "Editar tareas cron del usuario actual",
+            "ejemplo": "crontab -e"
+        },
+        {
+            "comando": "systemctl list-timers",
+            "descripcion": "Tareas programadas gestionadas por systemd",
+            "ejemplo": "systemctl list-timers --all"
+        },
+        {
+            "comando": "at",
+            "descripcion": "Ejecutar comando una sola vez en el futuro",
+            "ejemplo": "echo './script.sh' | at 02:00"
+        },
+        {
+            "comando": "env",
+            "descripcion": "Variables de entorno de la sesión",
+            "ejemplo": "env | grep PATH"
+        },
+        {
+            "comando": "export",
+            "descripcion": "Definir variable de entorno para la shell actual",
+            "ejemplo": "export EDITOR=vim"
+        },
+        {
+            "comando": "alias",
+            "descripcion": "Listar o crear alias de comandos en la shell",
+            "ejemplo": "alias ll='ls -lah'"
+        },
+        {
+            "comando": "which",
+            "descripcion": "Ruta del ejecutable en el PATH",
+            "ejemplo": "which python3"
+        },
+        {
+            "comando": "whereis",
+            "descripcion": "Ubicación de binario, fuentes y manual de un comando",
+            "ejemplo": "whereis nginx"
+        },
+        {
+            "comando": "type",
+            "descripcion": "Si el comando es alias, función o ejecutable",
+            "ejemplo": "type ls"
+        },
+        {
+            "comando": "command -v",
+            "descripcion": "Ruta del comando (útil en scripts bash)",
+            "ejemplo": "command -v git"
+        },
+        {
+            "comando": "history",
+            "descripcion": "Historial de comandos de la shell",
+            "ejemplo": "history | tail -20"
+        },
+        {
+            "comando": "man",
+            "descripcion": "Manual integrado de comandos",
+            "ejemplo": "man systemctl"
+        },
+        {
+            "comando": "help",
+            "descripcion": "Ayuda de builtins de bash (cd, export, etc.)",
+            "ejemplo": "help export"
+        },
+        {
+            "comando": "whatis",
+            "descripcion": "Descripción breve de un comando",
+            "ejemplo": "whatis systemctl"
+        },
+        {
+            "comando": "apropos",
+            "descripcion": "Buscar comandos por palabra clave en los manuales",
+            "ejemplo": "apropos firewall"
+        },
+        {
+            "comando": "tldr",
+            "descripcion": "Ejemplos prácticos resumidos (instalar: apt install tldr)",
+            "ejemplo": "tldr tar"
+        }
+    ]
+}

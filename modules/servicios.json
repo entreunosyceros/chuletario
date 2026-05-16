@@ -1,0 +1,69 @@
+{
+    "_meta": {
+        "modulo": "Servicios",
+        "version": "0.2",
+        "descripcion": "systemd y servicios del sistema"
+    },
+    "Servicios": [
+        {
+            "comando": "systemctl status",
+            "descripcion": "Estado y últimos logs de un servicio",
+            "ejemplo": "systemctl status ssh"
+        },
+        {
+            "comando": "systemctl start",
+            "descripcion": "Arrancar un servicio",
+            "ejemplo": "sudo systemctl start apache2"
+        },
+        {
+            "comando": "systemctl stop",
+            "descripcion": "Detener un servicio",
+            "ejemplo": "sudo systemctl stop apache2"
+        },
+        {
+            "comando": "systemctl restart",
+            "descripcion": "Reiniciar un servicio",
+            "ejemplo": "sudo systemctl restart apache2"
+        },
+        {
+            "comando": "systemctl reload",
+            "descripcion": "Recargar configuración sin cortar conexiones",
+            "ejemplo": "sudo systemctl reload nginx"
+        },
+        {
+            "comando": "systemctl enable",
+            "descripcion": "Activar arranque automático al boot",
+            "ejemplo": "sudo systemctl enable ssh"
+        },
+        {
+            "comando": "systemctl disable",
+            "descripcion": "Desactivar arranque automático",
+            "ejemplo": "sudo systemctl disable bluetooth"
+        },
+        {
+            "comando": "systemctl is-active",
+            "descripcion": "Comprobar si el servicio está activo",
+            "ejemplo": "systemctl is-active ssh"
+        },
+        {
+            "comando": "systemctl list-units",
+            "descripcion": "Listar unidades (servicios, timers, etc.)",
+            "ejemplo": "systemctl list-units --type=service"
+        },
+        {
+            "comando": "systemctl daemon-reload",
+            "descripcion": "Recargar unidades tras editar .service",
+            "ejemplo": "sudo systemctl daemon-reload"
+        },
+        {
+            "comando": "journalctl -u",
+            "descripcion": "Logs de un servicio concreto",
+            "ejemplo": "journalctl -u apache2 -n 50"
+        },
+        {
+            "comando": "service",
+            "descripcion": "Compatibilidad SysV (distros antiguas/scripts)",
+            "ejemplo": "sudo service ssh status"
+        }
+    ]
+}

@@ -1,0 +1,84 @@
+{
+    "_meta": {
+        "modulo": "Procesos",
+        "version": "0.2",
+        "descripcion": "Gestión y monitorización de procesos"
+    },
+    "Procesos": [
+        {
+            "comando": "ps",
+            "descripcion": "Listar procesos del sistema",
+            "ejemplo": "ps aux --sort=-%mem | head"
+        },
+        {
+            "comando": "top",
+            "descripcion": "Monitor interactivo de CPU y memoria",
+            "ejemplo": "top"
+        },
+        {
+            "comando": "htop",
+            "descripcion": "Monitor de procesos mejorado (si está instalado)",
+            "ejemplo": "htop"
+        },
+        {
+            "comando": "pgrep",
+            "descripcion": "Obtener PID por nombre de proceso",
+            "ejemplo": "pgrep -a apache2"
+        },
+        {
+            "comando": "pkill",
+            "descripcion": "Enviar señal a procesos por nombre",
+            "ejemplo": "pkill -f nginx"
+        },
+        {
+            "comando": "kill",
+            "descripcion": "Terminar proceso por PID (señal 15)",
+            "ejemplo": "kill 1234"
+        },
+        {
+            "comando": "kill -9",
+            "descripcion": "Forzar cierre de proceso (SIGKILL)",
+            "ejemplo": "kill -9 1234"
+        },
+        {
+            "comando": "killall",
+            "descripcion": "Terminar todos los procesos con ese nombre",
+            "ejemplo": "killall firefox"
+        },
+        {
+            "comando": "nice",
+            "descripcion": "Lanzar proceso con prioridad baja/alta",
+            "ejemplo": "nice -n 10 ./tarea.sh"
+        },
+        {
+            "comando": "renice",
+            "descripcion": "Cambiar prioridad de un proceso en ejecución",
+            "ejemplo": "renice -n 5 -p 1234"
+        },
+        {
+            "comando": "nohup",
+            "descripcion": "Ejecutar proceso que sigue al cerrar terminal",
+            "ejemplo": "nohup ./backup.sh &"
+        },
+        {
+            "comando": "jobs",
+            "descripcion": "Listar trabajos en segundo plano de la shell",
+            "ejemplo": "jobs -l"
+        },
+        {
+            "comando": "fg / bg",
+            "descripcion": "Traer a primer plano o enviar a segundo plano",
+            "ejemplo": "fg %1"
+        },
+        {
+            "comando": "free",
+            "descripcion": "Uso de RAM y swap",
+            "ejemplo": "free -h"
+        },
+        {
+            "comando": "uptime",
+            "descripcion": "Tiempo encendido y carga media del sistema",
+            "ejemplo": "uptime"
+        }
+    ]
+}

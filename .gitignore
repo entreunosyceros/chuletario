@@ -1,0 +1,17 @@
+# Entorno virtual
+.venv/
+
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Exportaciones generadas por la app (CLI: M / P)
+chuletario_*.md
+chuletario_*.pdf
+
+# Logs y temporales
+*.log
+*.tmp
+*.temp

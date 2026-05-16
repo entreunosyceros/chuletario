@@ -1,0 +1,114 @@
+{
+    "_meta": {
+        "modulo": "Usuarios y grupos",
+        "version": "0.3",
+        "descripcion": "Gestión de usuarios, grupos y sesiones"
+    },
+    "Usuarios y grupos": [
+        {
+            "comando": "useradd",
+            "descripcion": "Crear usuario con directorio home",
+            "ejemplo": "sudo useradd -m -s /bin/bash nombreusuario"
+        },
+        {
+            "comando": "usermod",
+            "descripcion": "Modificar usuario existente",
+            "ejemplo": "sudo usermod -aG sudo nombreusuario"
+        },
+        {
+            "comando": "userdel",
+            "descripcion": "Eliminar usuario y su home",
+            "ejemplo": "sudo userdel -r nombreusuario"
+        },
+        {
+            "comando": "passwd",
+            "descripcion": "Cambiar contraseña de usuario",
+            "ejemplo": "sudo passwd nombreusuario"
+        },
+        {
+            "comando": "groupadd",
+            "descripcion": "Crear un grupo nuevo",
+            "ejemplo": "sudo groupadd desarrollo"
+        },
+        {
+            "comando": "groupmod",
+            "descripcion": "Modificar nombre o GID de grupo",
+            "ejemplo": "sudo groupmod -n dev desarrollo"
+        },
+        {
+            "comando": "groupdel",
+            "descripcion": "Eliminar un grupo",
+            "ejemplo": "sudo groupdel desarrollo"
+        },
+        {
+            "comando": "id",
+            "descripcion": "Mostrar UID, GID y grupos del usuario",
+            "ejemplo": "id nombreusuario"
+        },
+        {
+            "comando": "whoami",
+            "descripcion": "Mostrar el usuario actual de la sesión",
+            "ejemplo": "whoami"
+        },
+        {
+            "comando": "w",
+            "descripcion": "Usuarios conectados y qué están ejecutando",
+            "ejemplo": "w"
+        },
+        {
+            "comando": "who",
+            "descripcion": "Listar usuarios con sesión abierta",
+            "ejemplo": "who"
+        },
+        {
+            "comando": "last",
+            "descripcion": "Historial de inicios de sesión",
+            "ejemplo": "last -n 20"
+        },
+        {
+            "comando": "chage",
+            "descripcion": "Política de caducidad de contraseñas",
+            "ejemplo": "sudo chage -l nombreusuario"
+        },
+        {
+            "comando": "getent",
+            "descripcion": "Consultar usuarios/grupos (NSS/local/LDAP)",
+            "ejemplo": "getent passwd nombreusuario"
+        },
+        {
+            "comando": "su",
+            "descripcion": "Cambiar a otro usuario (sin guión conserva directorio y variables)",
+            "ejemplo": "su nombreusuario"
+        },
+        {
+            "comando": "su -",
+            "descripcion": "Iniciar sesión como root con shell de login y entorno completo",
+            "ejemplo": "su -"
+        },
+        {
+            "comando": "su -",
+            "descripcion": "Cambiar a otro usuario con shell de login y su home",
+            "ejemplo": "su - nombreusuario"
+        },
+        {
+            "comando": "sudo su",
+            "descripcion": "Abrir shell de root usando privilegios sudo (entorno parcial)",
+            "ejemplo": "sudo su"
+        },
+        {
+            "comando": "sudo su -",
+            "descripcion": "Sesión root con entorno de login vía sudo",
+            "ejemplo": "sudo su -"
+        },
+        {
+            "comando": "sudo -i",
+            "descripcion": "Login interactivo como root (equivalente a su -; forma recomendada con sudo)",
+            "ejemplo": "sudo -i"
+        },
+        {
+            "comando": "sudo",
+            "descripcion": "Ejecutar comando con privilegios de root",
+            "ejemplo": "sudo systemctl restart ssh"
+        }
+    ]
+}

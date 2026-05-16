@@ -1,0 +1,54 @@
+{
+    "_meta": {
+        "modulo": "Backups",
+        "version": "0.2",
+        "descripcion": "Copias de seguridad y restauración"
+    },
+    "Backups": [
+        {
+            "comando": "tar -czf",
+            "descripcion": "Crear archivo comprimido (.tar.gz)",
+            "ejemplo": "tar -czf backup_home.tar.gz /home/usuario"
+        },
+        {
+            "comando": "tar -xzf",
+            "descripcion": "Extraer backup .tar.gz",
+            "ejemplo": "tar -xzf backup_home.tar.gz -C /restaurar"
+        },
+        {
+            "comando": "tar -tvf",
+            "descripcion": "Listar contenido sin extraer",
+            "ejemplo": "tar -tvf backup_home.tar.gz"
+        },
+        {
+            "comando": "rsync",
+            "descripcion": "Sincronizar directorios (local o remoto)",
+            "ejemplo": "rsync -avz --delete /origen/ /destino/"
+        },
+        {
+            "comando": "rsync (SSH)",
+            "descripcion": "Backup remoto cifrado por SSH",
+            "ejemplo": "rsync -avz -e ssh /datos/ user@servidor:/backup/"
+        },
+        {
+            "comando": "cp -a",
+            "descripcion": "Copia recursiva conservando permisos y fechas",
+            "ejemplo": "cp -a /etc/nginx /backup/nginx_$(date +%F)"
+        },
+        {
+            "comando": "dd",
+            "descripcion": "Clonado de disco o partición (bloque a bloque)",
+            "ejemplo": "sudo dd if=/dev/sda of=/dev/sdb bs=4M status=progress"
+        },
+        {
+            "comando": "find + tar",
+            "descripcion": "Backup selectivo por extensión o antigüedad",
+            "ejemplo": "find /var/log -name '*.log' -mtime +7 -exec tar -rvf logs_antiguos.tar {} +"
+        },
+        {
+            "comando": "crontab",
+            "descripcion": "Programar backups automáticos",
+            "ejemplo": "crontab -e"
+        }
+    ]
+}

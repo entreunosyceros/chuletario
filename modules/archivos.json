@@ -1,0 +1,334 @@
+{
+    "_meta": {
+        "modulo": "Archivos y carpetas",
+        "version": "0.2",
+        "descripcion": "Navegación, creación, copia, búsqueda y edición de archivos y directorios"
+    },
+    "Archivos y carpetas": [
+        {
+            "comando": "pwd",
+            "descripcion": "Mostrar el directorio de trabajo actual",
+            "ejemplo": "pwd"
+        },
+        {
+            "comando": "cd",
+            "descripcion": "Cambiar de directorio (cd - vuelve al anterior; cd ~ al home)",
+            "ejemplo": "cd /var/log"
+        },
+        {
+            "comando": "ls",
+            "descripcion": "Listar nombres en el directorio actual",
+            "ejemplo": "ls"
+        },
+        {
+            "comando": "ls -l",
+            "descripcion": "Formato largo: permisos, propietario, tamaño y fecha",
+            "ejemplo": "ls -l /etc"
+        },
+        {
+            "comando": "ls -a",
+            "descripcion": "Incluir archivos ocultos (empiezan por punto)",
+            "ejemplo": "ls -a ~"
+        },
+        {
+            "comando": "ls -lah",
+            "descripcion": "Largo + ocultos + tamaños legibles (muy habitual)",
+            "ejemplo": "ls -lah"
+        },
+        {
+            "comando": "ls -lh",
+            "descripcion": "Formato largo con tamaños en K, M, G (human-readable)",
+            "ejemplo": "ls -lh /var/log"
+        },
+        {
+            "comando": "ls -lt",
+            "descripcion": "Ordenar por fecha de modificación (más recientes primero)",
+            "ejemplo": "ls -lt"
+        },
+        {
+            "comando": "ls -ltr",
+            "descripcion": "Ordenar por fecha, los más antiguos al final",
+            "ejemplo": "ls -ltr descargas/"
+        },
+        {
+            "comando": "ls -lS",
+            "descripcion": "Ordenar por tamaño (mayor a menor)",
+            "ejemplo": "ls -lS /tmp"
+        },
+        {
+            "comando": "ls -R",
+            "descripcion": "Listar recursivamente subdirectorios",
+            "ejemplo": "ls -R proyecto/"
+        },
+        {
+            "comando": "ls -d",
+            "descripcion": "Listar el propio directorio, no su contenido",
+            "ejemplo": "ls -ld /etc/nginx"
+        },
+        {
+            "comando": "ls -1",
+            "descripcion": "Un archivo por línea (útil para scripts y tuberías)",
+            "ejemplo": "ls -1 | wc -l"
+        },
+        {
+            "comando": "ls -i",
+            "descripcion": "Mostrar número de inodo junto al nombre",
+            "ejemplo": "ls -li archivo.txt"
+        },
+        {
+            "comando": "ls --color",
+            "descripcion": "Colorear tipos de archivo (alias habitual en bash)",
+            "ejemplo": "ls --color=auto -lah"
+        },
+        {
+            "comando": "tree",
+            "descripcion": "Mostrar árbol de directorios (instalar: apt install tree)",
+            "ejemplo": "tree -L 2 proyecto/"
+        },
+        {
+            "comando": "mkdir",
+            "descripcion": "Crear directorio (o varios con -p)",
+            "ejemplo": "mkdir -p proyecto/src/logs"
+        },
+        {
+            "comando": "rmdir",
+            "descripcion": "Eliminar directorio vacío",
+            "ejemplo": "rmdir carpeta_vacia"
+        },
+        {
+            "comando": "touch",
+            "descripcion": "Crear archivo vacío o actualizar fecha de modificación",
+            "ejemplo": "touch notas.txt"
+        },
+        {
+            "comando": "cp",
+            "descripcion": "Copiar archivos o directorios (-r recursivo)",
+            "ejemplo": "cp -r origen/ destino/"
+        },
+        {
+            "comando": "cp -a",
+            "descripcion": "Copia recursiva preservando permisos, fechas y enlaces",
+            "ejemplo": "cp -a /etc/nginx/sites-available/miweb /backup/"
+        },
+        {
+            "comando": "cp -i",
+            "descripcion": "Preguntar antes de sobrescribir archivos existentes",
+            "ejemplo": "cp -i config.conf config.conf.bak"
+        },
+        {
+            "comando": "mv",
+            "descripcion": "Mover o renombrar archivos y carpetas",
+            "ejemplo": "mv viejo.txt nuevo.txt"
+        },
+        {
+            "comando": "rm",
+            "descripcion": "Eliminar archivos (-r directorios, -f sin confirmar)",
+            "ejemplo": "rm -rf carpeta_temp"
+        },
+        {
+            "comando": "ln",
+            "descripcion": "Crear enlace simbólico (-s) o enlace duro",
+            "ejemplo": "ln -s /etc/nginx/sites-available/miweb /etc/nginx/sites-enabled/miweb"
+        },
+        {
+            "comando": "find",
+            "descripcion": "Buscar archivos y carpetas por nombre, tipo o fecha",
+            "ejemplo": "find /var/log -type f -name '*.log' -mtime -7"
+        },
+        {
+            "comando": "find -exec",
+            "descripcion": "Ejecutar comando sobre cada resultado de find",
+            "ejemplo": "find . -name '*.tmp' -exec rm -f {} \\;"
+        },
+        {
+            "comando": "find -delete",
+            "descripcion": "Eliminar archivos que coincidan con el criterio (con cuidado)",
+            "ejemplo": "find /tmp -type f -name '*.tmp' -mtime +30 -delete"
+        },
+        {
+            "comando": "locate",
+            "descripcion": "Buscar por nombre en base de datos (rápido; actualizar con updatedb)",
+            "ejemplo": "locate nginx.conf"
+        },
+        {
+            "comando": "updatedb",
+            "descripcion": "Actualizar base de datos de locate (sudo)",
+            "ejemplo": "sudo updatedb"
+        },
+        {
+            "comando": "xargs",
+            "descripcion": "Pasar salida de find/ls a otro comando (ej. rm, chmod)",
+            "ejemplo": "find . -name '*.bak' -print0 | xargs -0 rm -f"
+        },
+        {
+            "comando": "file",
+            "descripcion": "Identificar tipo de archivo (texto, binario, enlace, etc.)",
+            "ejemplo": "file documento.pdf"
+        },
+        {
+            "comando": "realpath",
+            "descripcion": "Ruta absoluta resolviendo enlaces simbólicos",
+            "ejemplo": "realpath ../config/app.conf"
+        },
+        {
+            "comando": "readlink",
+            "descripcion": "Mostrar destino de un enlace simbólico (-f ruta canónica)",
+            "ejemplo": "readlink -f /usr/bin/python"
+        },
+        {
+            "comando": "basename / dirname",
+            "descripcion": "Extraer nombre de archivo o directorio padre de una ruta",
+            "ejemplo": "basename /var/log/syslog && dirname /var/log/syslog"
+        },
+        {
+            "comando": "mktemp",
+            "descripcion": "Crear archivo o directorio temporal seguro",
+            "ejemplo": "mktemp -d"
+        },
+        {
+            "comando": "cat",
+            "descripcion": "Mostrar contenido de uno o varios archivos",
+            "ejemplo": "cat /etc/hosts"
+        },
+        {
+            "comando": "less",
+            "descripcion": "Ver archivo largo con paginación (q para salir)",
+            "ejemplo": "less /var/log/syslog"
+        },
+        {
+            "comando": "more",
+            "descripcion": "Paginar archivo (menos funciones que less)",
+            "ejemplo": "more /var/log/syslog"
+        },
+        {
+            "comando": "nano",
+            "descripcion": "Editor de texto en terminal (sencillo)",
+            "ejemplo": "nano /etc/hosts"
+        },
+        {
+            "comando": "vim",
+            "descripcion": "Editor avanzado (:w guardar, :q salir, :wq guardar y salir)",
+            "ejemplo": "vim config.conf"
+        },
+        {
+            "comando": "tac",
+            "descripcion": "Mostrar archivo en orden inverso (última línea primero)",
+            "ejemplo": "tac archivo.log"
+        },
+        {
+            "comando": "nl",
+            "descripcion": "Mostrar archivo con números de línea",
+            "ejemplo": "nl -ba script.sh"
+        },
+        {
+            "comando": "tee",
+            "descripcion": "Escribir salida en archivo y en pantalla a la vez",
+            "ejemplo": "echo 'nueva linea' | sudo tee -a /etc/fstab"
+        },
+        {
+            "comando": "head / tail",
+            "descripcion": "Primeras o últimas líneas de un archivo",
+            "ejemplo": "tail -n 50 -f /var/log/apache2/access.log"
+        },
+        {
+            "comando": "grep",
+            "descripcion": "Buscar texto dentro de archivos (-r recursivo en carpetas)",
+            "ejemplo": "grep -rn 'error' /var/log/"
+        },
+        {
+            "comando": "zgrep / zcat",
+            "descripcion": "Buscar o ver dentro de archivos comprimidos .gz",
+            "ejemplo": "zgrep 'error' /var/log/syslog.1.gz"
+        },
+        {
+            "comando": "sort",
+            "descripcion": "Ordenar líneas de un archivo",
+            "ejemplo": "sort nombres.txt -o nombres_ordenados.txt"
+        },
+        {
+            "comando": "uniq",
+            "descripcion": "Eliminar líneas duplicadas consecutivas (suele ir tras sort)",
+            "ejemplo": "sort archivo.txt | uniq -c"
+        },
+        {
+            "comando": "cut",
+            "descripcion": "Extraer columnas o campos de un archivo delimitado",
+            "ejemplo": "cut -d: -f1 /etc/passwd"
+        },
+        {
+            "comando": "wc",
+            "descripcion": "Contar líneas, palabras y bytes de un archivo",
+            "ejemplo": "wc -l archivo.txt"
+        },
+        {
+            "comando": "diff",
+            "descripcion": "Comparar diferencias entre dos archivos o carpetas",
+            "ejemplo": "diff -u config.old config.new"
+        },
+        {
+            "comando": "cmp",
+            "descripcion": "Comparar dos archivos byte a byte (rápido para binarios)",
+            "ejemplo": "cmp archivo1.bin archivo2.bin"
+        },
+        {
+            "comando": "md5sum / sha256sum",
+            "descripcion": "Calcular huella para verificar integridad de archivos",
+            "ejemplo": "sha256sum imagen.iso"
+        },
+        {
+            "comando": "split",
+            "descripcion": "Dividir archivo grande en partes",
+            "ejemplo": "split -b 100M backup.tar.gz backup.tar.gz.part"
+        },
+        {
+            "comando": "tar",
+            "descripcion": "Empaquetar o desempaquetar archivos (.tar, .tar.gz)",
+            "ejemplo": "tar -czvf backup.tar.gz carpeta/"
+        },
+        {
+            "comando": "tar -x",
+            "descripcion": "Extraer archivo .tar o .tar.gz",
+            "ejemplo": "tar -xzvf backup.tar.gz -C /tmp/restaurar"
+        },
+        {
+            "comando": "gzip / gunzip",
+            "descripcion": "Comprimir o descomprimir un archivo .gz",
+            "ejemplo": "gzip -k grande.log"
+        },
+        {
+            "comando": "zip / unzip",
+            "descripcion": "Comprimir o extraer archivos .zip",
+            "ejemplo": "unzip archivo.zip -d destino/"
+        },
+        {
+            "comando": "rsync",
+            "descripcion": "Sincronizar copias locales o remotas (eficiente, incremental)",
+            "ejemplo": "rsync -avz origen/ usuario@servidor:/backup/"
+        },
+        {
+            "comando": "scp",
+            "descripcion": "Copiar archivos por SSH entre equipos",
+            "ejemplo": "scp -r carpeta/ usuario@192.168.1.10:/home/usuario/"
+        },
+        {
+            "comando": "truncate",
+            "descripcion": "Vaciar archivo o fijar su tamaño sin borrarlo",
+            "ejemplo": "truncate -s 0 /var/log/app.log"
+        },
+        {
+            "comando": "shred",
+            "descripcion": "Sobrescribir archivo antes de borrar (borrado seguro)",
+            "ejemplo": "shred -u -z archivo_sensible.txt"
+        },
+        {
+            "comando": "rename",
+            "descripcion": "Renombrar en lote con patrón (perl-rename o rename.ul)",
+            "ejemplo": "rename 's/.txt$/.bak/' *.txt"
+        },
+        {
+            "comando": "pushd / popd",
+            "descripcion": "Pila de directorios: guardar ruta y volver (dirs muestra la pila)",
+            "ejemplo": "pushd /var/log && popd"
+        }
+    ]
+}

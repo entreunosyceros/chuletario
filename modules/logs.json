@@ -1,0 +1,224 @@
+{
+    "_meta": {
+        "modulo": "Logs",
+        "version": "0.2",
+        "descripcion": "Registros, auditoría y diagnóstico por logs"
+    },
+    "Logs": [
+        {
+            "comando": "journalctl",
+            "descripcion": "Logs centralizados de systemd (últimas entradas y errores)",
+            "ejemplo": "journalctl -xe"
+        },
+        {
+            "comando": "journalctl -f",
+            "descripcion": "Seguir logs en tiempo real (como tail -f)",
+            "ejemplo": "journalctl -f"
+        },
+        {
+            "comando": "journalctl -n",
+            "descripcion": "Mostrar solo las últimas N líneas",
+            "ejemplo": "journalctl -n 100"
+        },
+        {
+            "comando": "journalctl --since",
+            "descripcion": "Filtrar por fecha/hora (today, yesterday, horas)",
+            "ejemplo": "journalctl --since \"today\" --priority=err"
+        },
+        {
+            "comando": "journalctl --until",
+            "descripcion": "Limitar logs hasta una fecha concreta",
+            "ejemplo": "journalctl --since \"2026-05-01\" --until \"2026-05-02\""
+        },
+        {
+            "comando": "journalctl -p",
+            "descripcion": "Filtrar por prioridad (emerg, err, warning, info…)",
+            "ejemplo": "journalctl -p err..alert"
+        },
+        {
+            "comando": "journalctl -u",
+            "descripcion": "Logs de un servicio systemd concreto",
+            "ejemplo": "journalctl -u nginx -n 50 --no-pager"
+        },
+        {
+            "comando": "journalctl -b",
+            "descripcion": "Logs del arranque actual (-b -1 arranque anterior)",
+            "ejemplo": "journalctl -b -p warning"
+        },
+        {
+            "comando": "journalctl -k",
+            "descripcion": "Solo mensajes del kernel (equivalente a dmesg en journal)",
+            "ejemplo": "journalctl -k"
+        },
+        {
+            "comando": "journalctl -g",
+            "descripcion": "Buscar texto dentro del journal (grep integrado)",
+            "ejemplo": "journalctl -g 'failed|error' --since today"
+        },
+        {
+            "comando": "journalctl _PID=",
+            "descripcion": "Logs generados por un proceso según su PID",
+            "ejemplo": "journalctl _PID=1234"
+        },
+        {
+            "comando": "journalctl -t",
+            "descripcion": "Filtrar por identificador syslog (tag del programa)",
+            "ejemplo": "journalctl -t sshd"
+        },
+        {
+            "comando": "journalctl --user",
+            "descripcion": "Logs de la sesión del usuario actual (user journal)",
+            "ejemplo": "journalctl --user -f"
+        },
+        {
+            "comando": "journalctl -o",
+            "descripcion": "Formato de salida (short, json, verbose, cat)",
+            "ejemplo": "journalctl -u apache2 -o json-pretty | head"
+        },
+        {
+            "comando": "journalctl --disk-usage",
+            "descripcion": "Espacio ocupado por el journal en disco",
+            "ejemplo": "journalctl --disk-usage"
+        },
+        {
+            "comando": "journalctl --vacuum",
+            "descripcion": "Liberar espacio del journal (por tiempo o tamaño)",
+            "ejemplo": "sudo journalctl --vacuum-time=7d"
+        },
+        {
+            "comando": "logger",
+            "descripcion": "Escribir un mensaje en syslog desde scripts o terminal",
+            "ejemplo": "logger -t miapp 'Backup completado'"
+        },
+        {
+            "comando": "tail -f",
+            "descripcion": "Seguir las últimas líneas de un archivo de log",
+            "ejemplo": "tail -f /var/log/syslog"
+        },
+        {
+            "comando": "tail -F",
+            "descripcion": "Seguir log aunque rote o se recree el archivo",
+            "ejemplo": "tail -F /var/log/nginx/access.log"
+        },
+        {
+            "comando": "tail -n",
+            "descripcion": "Ver solo las últimas N líneas de un log",
+            "ejemplo": "tail -n 200 /var/log/auth.log"
+        },
+        {
+            "comando": "less /var/log",
+            "descripcion": "Explorar logs clásicos con paginación",
+            "ejemplo": "less /var/log/auth.log"
+        },
+        {
+            "comando": "zgrep / zless",
+            "descripcion": "Buscar o leer logs comprimidos (.gz rotados)",
+            "ejemplo": "zgrep 'Failed password' /var/log/auth.log.*.gz"
+        },
+        {
+            "comando": "grep en logs",
+            "descripcion": "Buscar errores o eventos en ficheros de log",
+            "ejemplo": "grep -iE 'fail|error|denied' /var/log/syslog"
+        },
+        {
+            "comando": "multitail",
+            "descripcion": "Seguir varios logs a la vez en pantalla (apt install multitail)",
+            "ejemplo": "multitail /var/log/syslog /var/log/auth.log"
+        },
+        {
+            "comando": "lnav",
+            "descripcion": "Visor interactivo de logs con resaltado (apt install lnav)",
+            "ejemplo": "lnav /var/log/syslog"
+        },
+        {
+            "comando": "ls -lh /var/log",
+            "descripcion": "Listar logs del sistema y su tamaño",
+            "ejemplo": "ls -lhS /var/log"
+        },
+        {
+            "comando": "/var/log/syslog",
+            "descripcion": "Log general en Debian/Ubuntu (servicios, cron, etc.)",
+            "ejemplo": "sudo tail -f /var/log/syslog"
+        },
+        {
+            "comando": "/var/log/auth.log",
+            "descripcion": "Autenticación SSH, sudo, login y su",
+            "ejemplo": "grep sshd /var/log/auth.log | tail -20"
+        },
+        {
+            "comando": "/var/log/kern.log",
+            "descripcion": "Mensajes del kernel en sistemas con rsyslog",
+            "ejemplo": "tail -50 /var/log/kern.log"
+        },
+        {
+            "comando": "/var/log/messages",
+            "descripcion": "Log general en RHEL/CentOS/AlmaLinux",
+            "ejemplo": "sudo tail -f /var/log/messages"
+        },
+        {
+            "comando": "dmesg",
+            "descripcion": "Buffer de mensajes del kernel (hardware, drivers)",
+            "ejemplo": "dmesg -T | tail -30"
+        },
+        {
+            "comando": "dmesg -w",
+            "descripcion": "Seguir mensajes del kernel en tiempo real",
+            "ejemplo": "sudo dmesg -w"
+        },
+        {
+            "comando": "last",
+            "descripcion": "Historial de inicios de sesión correctos (wtmp)",
+            "ejemplo": "last -n 30"
+        },
+        {
+            "comando": "lastb",
+            "descripcion": "Intentos de login fallidos (requiere /var/log/btmp)",
+            "ejemplo": "sudo lastb | head -20"
+        },
+        {
+            "comando": "ausearch",
+            "descripcion": "Buscar eventos en logs de auditoría (auditd)",
+            "ejemplo": "sudo ausearch -m USER_LOGIN -ts today"
+        },
+        {
+            "comando": "aureport",
+            "descripcion": "Informes resumidos de auditoría (logins, comandos, etc.)",
+            "ejemplo": "sudo aureport -l"
+        },
+        {
+            "comando": "auditctl -l",
+            "descripcion": "Reglas de auditoría activas en el sistema",
+            "ejemplo": "sudo auditctl -l"
+        },
+        {
+            "comando": "systemctl status rsyslog",
+            "descripcion": "Estado del demonio que escribe logs clásicos en /var/log",
+            "ejemplo": "systemctl status rsyslog"
+        },
+        {
+            "comando": "logrotate",
+            "descripcion": "Rotación automática de logs (/etc/logrotate.d)",
+            "ejemplo": "sudo logrotate -d /etc/logrotate.conf"
+        },
+        {
+            "comando": "logrotate -f",
+            "descripcion": "Forzar rotación manual de un log",
+            "ejemplo": "sudo logrotate -f /etc/logrotate.d/nginx"
+        },
+        {
+            "comando": "wc -l",
+            "descripcion": "Contar líneas de un log (volumen de eventos)",
+            "ejemplo": "wc -l /var/log/nginx/access.log"
+        },
+        {
+            "comando": "find /var/log",
+            "descripcion": "Localizar logs por nombre, tamaño o antigüedad",
+            "ejemplo": "find /var/log -name '*.log' -mtime -1 -ls"
+        },
+        {
+            "comando": "fail2ban-client",
+            "descripcion": "Estado de baneos y jails de fail2ban (seguridad)",
+            "ejemplo": "sudo fail2ban-client status sshd"
+        }
+    ]
+}
