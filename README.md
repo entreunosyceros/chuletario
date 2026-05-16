@@ -4,8 +4,6 @@
 
 Esto no es más que una chuleta interactiva de comandos Linux para administración de sistemas. Consulta, busca, añade y edita entradas organizadas por categorías, exporta a Markdown o PDF y gestiona todo desde la terminal con una interfaz CLI enriquecida o una TUI visual. Algo fácil de usar y fácilmente ampliable.
 
-**Creado por [entreunosyceros](https://github.com/entreunosyceros)**
-
 ## Características
 
 - **Más de 420 comandos** repartidos en 12 categorías (redes, sistema, logs, paquetes, usuarios, archivos, etc.) que he ido metiendo yo mismo durante algunos cursos que he realizado.
