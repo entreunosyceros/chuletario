@@ -73,6 +73,7 @@ ACCIONES_MENU = [
     ("P", "Exportar PDF", "Generar archivo .pdf con todos los comandos"),
     ("R", "Recargar", "Volver a leer los módulos JSON desde disco"),
     ("T", "Interfaz TUI", "Abrir el modo visual en terminal"),
+    ("J", "practicANDO", "MF0223_3 — ejercicios interactivos por bloques temáticos"),
     ("C", "Créditos", "Información del proyecto y repositorio"),
     ("0", "Salir", "Cerrar Chuletario"),
 ]

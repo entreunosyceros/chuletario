@@ -11,6 +11,11 @@
             "ejemplo": "uname -a"
         },
         {
+            "comando": "uname -r",
+            "descripcion": "Mostrar solo la versión del kernel",
+            "ejemplo": "uname -r"
+        },
+        {
             "comando": "arch",
             "descripcion": "Arquitectura del procesador (x86_64, aarch64…)",
             "ejemplo": "arch"

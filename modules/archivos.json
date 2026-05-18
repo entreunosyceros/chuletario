@@ -191,6 +191,16 @@
             "ejemplo": "cat /etc/hosts"
         },
         {
+            "comando": "echo >",
+            "descripcion": "Escribir texto en un archivo (sustituye el contenido anterior)",
+            "ejemplo": "echo \"Hola clase\" > archivo1.txt"
+        },
+        {
+            "comando": "echo >>",
+            "descripcion": "Añadir texto al final de un archivo sin borrar lo anterior",
+            "ejemplo": "echo \"línea 1\" >> archivo1.txt"
+        },
+        {
             "comando": "less",
             "descripcion": "Ver archivo largo con paginación (q para salir)",
             "ejemplo": "less /var/log/syslog"

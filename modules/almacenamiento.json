@@ -1,9 +1,4 @@
 {
-    "_meta": {
-        "modulo": "Almacenamiento",
-        "version": "0.1",
-        "descripcion": "Discos, particiones y sistemas de archivos"
-    },
     "Almacenamiento": [
         {
             "comando": "lsblk",
@@ -53,7 +48,8 @@
         {
             "comando": "fstab",
             "descripcion": "Montajes permanentes al arranque (/etc/fstab)",
-            "ejemplo": "sudo nano /etc/fstab"
+            "ejemplo": "sudo nano /etc/fstab",
+            "notas": "Hay que tener cuidadín con modificar lo que no se debe"
         },
         {
             "comando": "fsck",

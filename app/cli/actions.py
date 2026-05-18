@@ -1,5 +1,6 @@
 """Acciones de la interfaz de línea de comandos (Rich)."""
 
+import os
 import subprocess
 from datetime import datetime
 
@@ -20,6 +21,7 @@ from app.ayuda import abrir_creditos_en_navegador
 from app.catalog import hint_categorias, hint_comandos, resolver_categoria, resolver_comando
 from app.constants import CREDITOS_AUTOR, CREDITOS_DESCRIPCION, CREDITOS_URL
 from app.console import console
+from app.paths import MENU_EJERCICIOS_SH
 from app.crud import (
     aplicar_edicion,
     crear_comando,
@@ -68,6 +70,23 @@ def ejecutar() -> None:
         subprocess.run(cmd, shell=True, check=False)
     except OSError as e:
         console.print(f"[red]No se pudo ejecutar el comando:[/red] {e}")
+
+
+def abrir_ejercicios() -> None:
+    """Lanza el menú de ejercicios; al salir (0) vuelve a la CLI de Chuletario."""
+    if not MENU_EJERCICIOS_SH.is_file():
+        console.print(f"[red]No se encontró el script:[/red] {MENU_EJERCICIOS_SH}")
+        return
+    env = {**os.environ, "CHULETARIO": "1"}
+    try:
+        subprocess.run(
+            ["bash", str(MENU_EJERCICIOS_SH)],
+            cwd=MENU_EJERCICIOS_SH.parent,
+            env=env,
+            check=False,
+        )
+    except OSError as e:
+        console.print(f"[red]No se pudo lanzar practicANDO:[/red] {e}")
 
 
 def exportar_md() -> None:

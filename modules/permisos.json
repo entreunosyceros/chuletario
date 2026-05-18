@@ -16,6 +16,11 @@
             "ejemplo": "chmod 755 script.sh"
         },
         {
+            "comando": "chmod u+x",
+            "descripcion": "Añadir permiso de ejecución al propietario (notación simbólica)",
+            "ejemplo": "chmod u+x archivo1.txt"
+        },
+        {
             "comando": "chown",
             "descripcion": "Cambiar propietario y grupo",
             "ejemplo": "sudo chown juan:desarrollo proyecto/"

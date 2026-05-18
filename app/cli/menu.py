@@ -99,6 +99,9 @@ def menu() -> None:
             espera_limpia()
         elif op_norm == "t":
             ChuletarioTUI().run()
+        elif op_norm == "j":
+            actions.abrir_ejercicios()
+            espera_limpia()
         elif op_norm == "c":
             actions.mostrar_creditos()
             espera_limpia()

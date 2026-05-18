@@ -5,7 +5,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
-*.so
+
 
 # Exportaciones generadas por la app (CLI: M / P)
 chuletario_*.md

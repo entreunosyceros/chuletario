@@ -11,6 +11,12 @@
             "ejemplo": "sudo useradd -m -s /bin/bash nombreusuario"
         },
         {
+            "comando": "adduser",
+            "descripcion": "Crear usuario de forma interactiva (Debian/Ubuntu; equivalente amigable a useradd)",
+            "ejemplo": "sudo adduser nombreusuario",
+            "notas": "Guía paso a paso (contraseña, datos opcionales). En otras distros puede no estar instalado."
+        },
+        {
             "comando": "usermod",
             "descripcion": "Modificar usuario existente",
             "ejemplo": "sudo usermod -aG sudo nombreusuario"
@@ -49,6 +55,11 @@
             "comando": "whoami",
             "descripcion": "Mostrar el usuario actual de la sesión",
             "ejemplo": "whoami"
+        },
+        {
+            "comando": "groups",
+            "descripcion": "Mostrar los grupos a los que pertenece el usuario actual",
+            "ejemplo": "groups"
         },
         {
             "comando": "w",

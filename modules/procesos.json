@@ -11,6 +11,11 @@
             "ejemplo": "ps aux --sort=-%mem | head"
         },
         {
+            "comando": "ps aux",
+            "descripcion": "Listar todos los procesos del sistema con usuario, CPU y memoria",
+            "ejemplo": "ps aux"
+        },
+        {
             "comando": "top",
             "descripcion": "Monitor interactivo de CPU y memoria",
             "ejemplo": "top"
