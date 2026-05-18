@@ -14,6 +14,7 @@ Esto no es más que una chuleta interactiva de comandos Linux para administraci�
 - **Advertencias**: notas personalizadas, marca de comando peligroso y detección automática de ejemplos delicados (`rm`, `dd`, etc.)
 - **Ayuda integrada**: manual del comando (`man` en Linux/macOS; navegador o WSL en Windows) y enlace opcional a documentación externa
 - **Exportación** a Markdown y PDF
+- **practicANDO** (`J` en el menú CLI): ejercicios interactivos **MF0223_3** por bloques (arquitectura, sistemas operativos, Linux, almacenamiento), con enunciados, respuestas y comandos opcionales en vivo (`Scripts/menu_ejercicios.sh`)
 - **Datos modulares**: un archivo JSON por área en `modules/` (fácil de mantener y versionar)
 - **Launcher `run_app.py`**: crea el entorno virtual, instala dependencias si faltan y arranca la app sin configurar nada a mano (ideal en Windows y para quien clona el repo por primera vez)
 
@@ -91,8 +92,21 @@ Chuletario funciona en **Windows 10/11** con Python 3.10+:
 | `P` | Exportar PDF |
 | `R` | Recargar módulos JSON |
 | `T` | Abrir interfaz TUI |
+| `J` | **practicANDO** — ejercicios MF0223_3 (menú bash) |
 | `C` | Créditos |
 | `0` | Salir |
+
+### practicANDO (ejercicios MF0223_3)
+
+Desde el menú CLI pulsa **`J`** o ejecuta el script directamente en Linux/macOS:
+
+```bash
+bash Scripts/menu_ejercicios.sh
+```
+
+Incluye bloques teóricos y prácticos (comandos Linux, permisos, particiones, etc.). En varios ejercicios puedes **ejecutar en vivo** los comandos propuestos (p. ej. `dmidecode`, `free`, `lsblk`); algunos requieren `sudo`. Si entras desde Chuletario (`J`), al salir con `0` vuelves al menú principal de la app.
+
+En **Windows** hace falta **bash** (WSL o Git Bash); el script no está pensado para `cmd`/`PowerShell` nativos.
 
 ### Interfaz TUI
 <p>
@@ -134,6 +148,8 @@ chuletario/
 │   ├── servicios.json
 │   ├── sistema.json
 │   └── usuarios.json
+├── Scripts/
+│   └── menu_ejercicios.sh  # practicANDO — ejercicios MF0223_3 (tecla J)
 └── app/                    # Código Python
     ├── __init__.py
     ├── paths.py            # Rutas del proyecto (multiplataforma)
