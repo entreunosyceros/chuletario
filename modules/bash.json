@@ -1,15 +1,10 @@
 {
-    "_meta": {
-        "modulo": "Bash",
-        "version": "1.0",
-        "descripcion": "Comandos y construcciones de Bash para scripts de automatización"
-    },
     "Bash": [
         {
             "comando": "#!/bin/bash",
             "descripcion": "Shebang: indica que el script debe ejecutarse con Bash",
             "ejemplo": "#!/bin/bash\n# primera línea del script.sh",
-            "notas": "Dar permisos de ejecución: chmod +x script.sh"
+            "notas": "Dar permisos de ejecución al archivo: chmod +x script.sh"
         },
         {
             "comando": "set -euo pipefail",

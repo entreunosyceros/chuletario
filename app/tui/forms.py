@@ -129,7 +129,7 @@ class _FormModal(ModalScreen[bool]):
             widget.update("[dim]Rellena comando o ejemplo para ver la vista previa[/dim]")
             return
         notas, _, peligro = _leer_campos_opcionales_form(self)
-        _aplicar_campos_opcionales(borrador, notas, None, peligro)
+        aplicar_campos_opcionales(borrador, notas, None, peligro)
         texto = texto_advertencias_item(borrador)
         if texto:
             if borrador.get("peligro") or borrador.get("notas"):
